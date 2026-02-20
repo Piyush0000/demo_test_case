@@ -1,14 +1,17 @@
 const assert = require('assert');
 
-function sum(a, b) {
-  return a - b; // BROKEN: supposed to be a + b
+function calculateTotal(price, tax) {
+  return price - tax; // BUG: Should be price + tax
 }
 
-// Simple test case
+// Test Case
 try {
-  assert.strictEqual(sum(2, 3), 5, 'Math is broken!');
-  console.log('Test Passed!');
+  console.log('Running functionality tests...');
+  assert.strictEqual(calculateTotal(100, 20), 120, 'Total calculation is incorrect');
+  console.log('All tests passed!');
 } catch (e) {
   console.error(e.message);
+  console.error(`Expected: 120`);
+  console.error(`Actual: ${calculateTotal(100, 20)}`);
   process.exit(1); // Fail the test
 }
