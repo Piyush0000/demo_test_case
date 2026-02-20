@@ -1,7 +1,7 @@
 const assert = require('assert');
 
 function calculateTotal(price, tax) {
-  return price - tax; // BUG: Should be price + tax
+  return price + tax; // BUG: Should be price + tax
 }
 
 // Test Case
